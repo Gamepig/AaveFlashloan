@@ -1,0 +1,975 @@
+{
+  "contractName": "IFlashLoanSimpleReceiver",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "asset",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "premium",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "initiator",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "params",
+          "type": "bytes"
+        }
+      ],
+      "name": "executeOperation",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ADDRESSES_PROVIDER",
+      "outputs": [
+        {
+          "internalType": "contract IPoolAddressesProvider",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "POOL",
+      "outputs": [
+        {
+          "internalType": "contract IPool",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ADDRESSES_PROVIDER\",\"outputs\":[{\"internalType\":\"contract IPoolAddressesProvider\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"POOL\",\"outputs\":[{\"internalType\":\"contract IPool\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"premium\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"initiator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"params\",\"type\":\"bytes\"}],\"name\":\"executeOperation\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Aave\",\"details\":\"Implement this interface to develop a flashloan-compatible flashLoanReceiver contract*\",\"kind\":\"dev\",\"methods\":{\"executeOperation(address,uint256,uint256,address,bytes)\":{\"details\":\"Ensure that the contract can return the debt + premium, e.g., has      enough funds to repay and has approved the Pool to pull the total amount\",\"params\":{\"amount\":\"The amount of the flash-borrowed asset\",\"asset\":\"The address of the flash-borrowed asset\",\"initiator\":\"The address of the flashloan initiator\",\"params\":\"The byte-encoded params passed when initiating the flashloan\",\"premium\":\"The fee of the flash-borrowed asset\"},\"returns\":{\"_0\":\"True if the execution of the operation succeeds, false otherwise\"}}},\"title\":\"IFlashLoanSimpleReceiver\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"executeOperation(address,uint256,uint256,address,bytes)\":{\"notice\":\"Executes an operation after receiving the flash-borrowed asset\"}},\"notice\":\"Defines the basic interface of a flashloan-receiver contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/interfaces/IFlashLoanSimpleReceiver.sol\":\"IFlashLoanSimpleReceiver\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/interfaces/IFlashLoanSimpleReceiver.sol\":{\"keccak256\":\"0x70f68f2b8e63a9421f865cda4af1cb5d8284edc245caaa651d86233617ae05ef\",\"license\":\"AGPL-3.0\",\"urls\":[\"bzz-raw://b1bd12a01c11c03bdbb79bc60898c93943663e2a22c908e34d4ecb51061d2309\",\"dweb:/ipfs/QmXCbP2q7gs3BYUgjXAsvHBKZ5Xe7HCmGfFo2iKhDWeWMV\"]},\"project:/interfaces/IPool.sol\":{\"keccak256\":\"0xf8a4d27b0c7eadb8d6e2473e179c4b850246923ff7c1553c3ed406fb04e570dc\",\"license\":\"AGPL-3.0\",\"urls\":[\"bzz-raw://4f9bccd9663a58ab7c5627799ee3440823d3106ecddd4593d243aa24578bd89c\",\"dweb:/ipfs/QmNz4gx1YZm2q3FMRTjYSrmRsgRf2VDDyL4M2WWRSYN8ur\"]},\"project:/interfaces/IPoolAddressesProvider.sol\":{\"keccak256\":\"0xe079093b8ff8dd145e09e8228562388128457e7221597c51d55c15096d457c06\",\"license\":\"AGPL-3.0\",\"urls\":[\"bzz-raw://1e09ef04ec7fd9511e2f47c2c52ee58fd2b8b388d96dbad48e434eaf4fe601e8\",\"dweb:/ipfs/QmZTYaDsbAjbKNG4YSWLprLBxr36PCm56EYpCtsiLt1e26\"]},\"project:/libraries/DataTypes.sol\":{\"keccak256\":\"0x68b21728670e54a3d50980d8fa1836c6eeee56ae5cb5e94f1f45b573909d307a\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://f781f0ce051aae0a27d948c5d72775eb62903d30368da611de2e95ca08b71420\",\"dweb:/ipfs/QmfMKoVn5xijjXVvpdMVeXCgeXUpTnFXVR2EvkHVfJcRfZ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: AGPL-3.0\npragma solidity ^0.8.0;\n\nimport { IPoolAddressesProvider } from './IPoolAddressesProvider.sol';\nimport { IPool } from './IPool.sol';\n\n/**\n * @title IFlashLoanSimpleReceiver\n * @author Aave\n * @notice Defines the basic interface of a flashloan-receiver contract.\n * @dev Implement this interface to develop a flashloan-compatible flashLoanReceiver contract\n **/\ninterface IFlashLoanSimpleReceiver {\n  /**\n   * @notice Executes an operation after receiving the flash-borrowed asset\n   * @dev Ensure that the contract can return the debt + premium, e.g., has\n   *      enough funds to repay and has approved the Pool to pull the total amount\n   * @param asset The address of the flash-borrowed asset\n   * @param amount The amount of the flash-borrowed asset\n   * @param premium The fee of the flash-borrowed asset\n   * @param initiator The address of the flashloan initiator\n   * @param params The byte-encoded params passed when initiating the flashloan\n   * @return True if the execution of the operation succeeds, false otherwise\n   */\n  function executeOperation(\n    address asset,\n    uint256 amount,\n    uint256 premium,\n    address initiator,\n    bytes calldata params\n  ) external returns (bool);\n\n  function ADDRESSES_PROVIDER() external view returns (IPoolAddressesProvider);\n\n  function POOL() external view returns (IPool);\n}",
+  "sourcePath": "/Users/vichuang/Documents/Python Project/AaveFlashloan/interfaces/IFlashLoanSimpleReceiver.sol",
+  "ast": {
+    "absolutePath": "project:/interfaces/IFlashLoanSimpleReceiver.sol",
+    "exportedSymbols": {
+      "IFlashLoanSimpleReceiver": [
+        8395
+      ],
+      "IPool": [
+        9032
+      ],
+      "IPoolAddressesProvider": [
+        9241
+      ]
+    },
+    "id": 8396,
+    "license": "AGPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8361,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:23:5"
+      },
+      {
+        "absolutePath": "project:/interfaces/IPoolAddressesProvider.sol",
+        "file": "./IPoolAddressesProvider.sol",
+        "id": 8363,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 8396,
+        "sourceUnit": 9242,
+        "src": "62:70:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 8362,
+              "name": "IPoolAddressesProvider",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "71:22:5",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/interfaces/IPool.sol",
+        "file": "./IPool.sol",
+        "id": 8365,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 8396,
+        "sourceUnit": 9033,
+        "src": "133:36:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 8364,
+              "name": "IPool",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "142:5:5",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFlashLoanSimpleReceiver",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 8366,
+          "nodeType": "StructuredDocumentation",
+          "src": "171:226:5",
+          "text": " @title IFlashLoanSimpleReceiver\n @author Aave\n @notice Defines the basic interface of a flashloan-receiver contract.\n @dev Implement this interface to develop a flashloan-compatible flashLoanReceiver contract*"
+        },
+        "fullyImplemented": false,
+        "id": 8395,
+        "linearizedBaseContracts": [
+          8395
+        ],
+        "name": "IFlashLoanSimpleReceiver",
+        "nameLocation": "408:24:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 8367,
+              "nodeType": "StructuredDocumentation",
+              "src": "437:635:5",
+              "text": " @notice Executes an operation after receiving the flash-borrowed asset\n @dev Ensure that the contract can return the debt + premium, e.g., has\n      enough funds to repay and has approved the Pool to pull the total amount\n @param asset The address of the flash-borrowed asset\n @param amount The amount of the flash-borrowed asset\n @param premium The fee of the flash-borrowed asset\n @param initiator The address of the flashloan initiator\n @param params The byte-encoded params passed when initiating the flashloan\n @return True if the execution of the operation succeeds, false otherwise"
+            },
+            "functionSelector": "1b11d0ff",
+            "id": 8382,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "executeOperation",
+            "nameLocation": "1084:16:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8378,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8369,
+                  "mutability": "mutable",
+                  "name": "asset",
+                  "nameLocation": "1114:5:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1106:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8368,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1106:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8371,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1133:6:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1125:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8370,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1125:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8373,
+                  "mutability": "mutable",
+                  "name": "premium",
+                  "nameLocation": "1153:7:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1145:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8372,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1145:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8375,
+                  "mutability": "mutable",
+                  "name": "initiator",
+                  "nameLocation": "1174:9:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1166:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1166:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8377,
+                  "mutability": "mutable",
+                  "name": "params",
+                  "nameLocation": "1204:6:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1189:21:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 8376,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1189:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1100:114:5"
+            },
+            "returnParameters": {
+              "id": 8381,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8380,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1233:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 8379,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1233:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1232:6:5"
+            },
+            "scope": 8395,
+            "src": "1075:164:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "0542975c",
+            "id": 8388,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ADDRESSES_PROVIDER",
+            "nameLocation": "1252:18:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8383,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1270:2:5"
+            },
+            "returnParameters": {
+              "id": 8387,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8386,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8388,
+                  "src": "1296:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPoolAddressesProvider_$9241",
+                    "typeString": "contract IPoolAddressesProvider"
+                  },
+                  "typeName": {
+                    "id": 8385,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 8384,
+                      "name": "IPoolAddressesProvider",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 9241,
+                      "src": "1296:22:5"
+                    },
+                    "referencedDeclaration": 9241,
+                    "src": "1296:22:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPoolAddressesProvider_$9241",
+                      "typeString": "contract IPoolAddressesProvider"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1295:24:5"
+            },
+            "scope": 8395,
+            "src": "1243:77:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "7535d246",
+            "id": 8394,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "POOL",
+            "nameLocation": "1333:4:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8389,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1337:2:5"
+            },
+            "returnParameters": {
+              "id": 8393,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8392,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8394,
+                  "src": "1363:5:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPool_$9032",
+                    "typeString": "contract IPool"
+                  },
+                  "typeName": {
+                    "id": 8391,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 8390,
+                      "name": "IPool",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 9032,
+                      "src": "1363:5:5"
+                    },
+                    "referencedDeclaration": 9032,
+                    "src": "1363:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPool_$9032",
+                      "typeString": "contract IPool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1362:7:5"
+            },
+            "scope": 8395,
+            "src": "1324:46:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8396,
+        "src": "398:974:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:1335:5"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/interfaces/IFlashLoanSimpleReceiver.sol",
+    "exportedSymbols": {
+      "IFlashLoanSimpleReceiver": [
+        8395
+      ],
+      "IPool": [
+        9032
+      ],
+      "IPoolAddressesProvider": [
+        9241
+      ]
+    },
+    "id": 8396,
+    "license": "AGPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8361,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:23:5"
+      },
+      {
+        "absolutePath": "project:/interfaces/IPoolAddressesProvider.sol",
+        "file": "./IPoolAddressesProvider.sol",
+        "id": 8363,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 8396,
+        "sourceUnit": 9242,
+        "src": "62:70:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 8362,
+              "name": "IPoolAddressesProvider",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "71:22:5",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/interfaces/IPool.sol",
+        "file": "./IPool.sol",
+        "id": 8365,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 8396,
+        "sourceUnit": 9033,
+        "src": "133:36:5",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 8364,
+              "name": "IPool",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "142:5:5",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFlashLoanSimpleReceiver",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 8366,
+          "nodeType": "StructuredDocumentation",
+          "src": "171:226:5",
+          "text": " @title IFlashLoanSimpleReceiver\n @author Aave\n @notice Defines the basic interface of a flashloan-receiver contract.\n @dev Implement this interface to develop a flashloan-compatible flashLoanReceiver contract*"
+        },
+        "fullyImplemented": false,
+        "id": 8395,
+        "linearizedBaseContracts": [
+          8395
+        ],
+        "name": "IFlashLoanSimpleReceiver",
+        "nameLocation": "408:24:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 8367,
+              "nodeType": "StructuredDocumentation",
+              "src": "437:635:5",
+              "text": " @notice Executes an operation after receiving the flash-borrowed asset\n @dev Ensure that the contract can return the debt + premium, e.g., has\n      enough funds to repay and has approved the Pool to pull the total amount\n @param asset The address of the flash-borrowed asset\n @param amount The amount of the flash-borrowed asset\n @param premium The fee of the flash-borrowed asset\n @param initiator The address of the flashloan initiator\n @param params The byte-encoded params passed when initiating the flashloan\n @return True if the execution of the operation succeeds, false otherwise"
+            },
+            "functionSelector": "1b11d0ff",
+            "id": 8382,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "executeOperation",
+            "nameLocation": "1084:16:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8378,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8369,
+                  "mutability": "mutable",
+                  "name": "asset",
+                  "nameLocation": "1114:5:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1106:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8368,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1106:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8371,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1133:6:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1125:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8370,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1125:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8373,
+                  "mutability": "mutable",
+                  "name": "premium",
+                  "nameLocation": "1153:7:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1145:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8372,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1145:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8375,
+                  "mutability": "mutable",
+                  "name": "initiator",
+                  "nameLocation": "1174:9:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1166:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1166:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8377,
+                  "mutability": "mutable",
+                  "name": "params",
+                  "nameLocation": "1204:6:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1189:21:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 8376,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1189:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1100:114:5"
+            },
+            "returnParameters": {
+              "id": 8381,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8380,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8382,
+                  "src": "1233:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 8379,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1233:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1232:6:5"
+            },
+            "scope": 8395,
+            "src": "1075:164:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "0542975c",
+            "id": 8388,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ADDRESSES_PROVIDER",
+            "nameLocation": "1252:18:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8383,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1270:2:5"
+            },
+            "returnParameters": {
+              "id": 8387,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8386,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8388,
+                  "src": "1296:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPoolAddressesProvider_$9241",
+                    "typeString": "contract IPoolAddressesProvider"
+                  },
+                  "typeName": {
+                    "id": 8385,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 8384,
+                      "name": "IPoolAddressesProvider",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 9241,
+                      "src": "1296:22:5"
+                    },
+                    "referencedDeclaration": 9241,
+                    "src": "1296:22:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPoolAddressesProvider_$9241",
+                      "typeString": "contract IPoolAddressesProvider"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1295:24:5"
+            },
+            "scope": 8395,
+            "src": "1243:77:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "7535d246",
+            "id": 8394,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "POOL",
+            "nameLocation": "1333:4:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8389,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1337:2:5"
+            },
+            "returnParameters": {
+              "id": 8393,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8392,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8394,
+                  "src": "1363:5:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IPool_$9032",
+                    "typeString": "contract IPool"
+                  },
+                  "typeName": {
+                    "id": 8391,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 8390,
+                      "name": "IPool",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 9032,
+                      "src": "1363:5:5"
+                    },
+                    "referencedDeclaration": 9032,
+                    "src": "1363:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPool_$9032",
+                      "typeString": "contract IPool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1362:7:5"
+            },
+            "scope": 8395,
+            "src": "1324:46:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8396,
+        "src": "398:974:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:1335:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-12-06T07:15:11.508Z",
+  "devdoc": {
+    "author": "Aave",
+    "details": "Implement this interface to develop a flashloan-compatible flashLoanReceiver contract*",
+    "kind": "dev",
+    "methods": {
+      "executeOperation(address,uint256,uint256,address,bytes)": {
+        "details": "Ensure that the contract can return the debt + premium, e.g., has      enough funds to repay and has approved the Pool to pull the total amount",
+        "params": {
+          "amount": "The amount of the flash-borrowed asset",
+          "asset": "The address of the flash-borrowed asset",
+          "initiator": "The address of the flashloan initiator",
+          "params": "The byte-encoded params passed when initiating the flashloan",
+          "premium": "The fee of the flash-borrowed asset"
+        },
+        "returns": {
+          "_0": "True if the execution of the operation succeeds, false otherwise"
+        }
+      }
+    },
+    "title": "IFlashLoanSimpleReceiver",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "executeOperation(address,uint256,uint256,address,bytes)": {
+        "notice": "Executes an operation after receiving the flash-borrowed asset"
+      }
+    },
+    "notice": "Defines the basic interface of a flashloan-receiver contract.",
+    "version": 1
+  }
+}
